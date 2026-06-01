@@ -119,7 +119,7 @@ struct ProfesorDetailView: View {
                         .fontWeight(.medium)
                 }
 
-                LabeledContent("Nombre", value: "\(profesor.apellido), \(profesor.nombre)")
+                LabeledContent("Nombre", value: "\(profesor.apellido), \(profesor.apellidoM), \(profesor.nombre)")
                 LabeledContent("Email", value: profesor.email)
                     .foregroundStyle(.blue)
                 LabeledContent("Teléfono", value: profesor.telefono)

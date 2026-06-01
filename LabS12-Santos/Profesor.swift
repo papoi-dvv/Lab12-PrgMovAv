@@ -12,6 +12,7 @@ import SwiftData
 class Profesor {
     @Attribute(.unique) var idProfesor: UUID
     var apellido: String
+    var apellidoM: String
     var nombre: String
     var email: String
     var telefono: String
@@ -35,6 +36,7 @@ class Profesor {
     init(
         idProfesor: UUID = UUID(),
         apellido: String,
+        apellidoM: String,
         nombre: String,
         email: String,
         telefono: String,
@@ -46,6 +48,7 @@ class Profesor {
     ) {
         self.idProfesor = idProfesor
         self.apellido = apellido
+        self.apellidoM = apellidoM
         self.nombre = nombre
         self.email = email
         self.telefono = telefono

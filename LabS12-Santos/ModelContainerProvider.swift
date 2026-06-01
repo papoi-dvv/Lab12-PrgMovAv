@@ -18,12 +18,12 @@ class ModelContainerProvider {
         
         do {
             let config = ModelConfiguration(
-                "ProfesoresData",
+                "NewProfesoresData",
                 schema: schema,
                 url: FileManager.default
                     .urls(for: .applicationSupportDirectory, in: .userDomainMask)
                     .first!
-                    .appendingPathComponent("ProfesoresData.sqlite")
+                    .appendingPathComponent("NewProfesoresData.sqlite")
             )
             container = try ModelContainer(for:schema, configurations: [config])
         } catch {

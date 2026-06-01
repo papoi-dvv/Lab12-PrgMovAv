@@ -13,6 +13,7 @@ struct NuevoProfesorView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var apellido = ""
+    @State private var apellidoM = ""
     @State private var nombre = ""
     @State private var email = ""
     @State private var telefono = ""
@@ -24,6 +25,7 @@ struct NuevoProfesorView: View {
 
     private var formularioValido: Bool {
         !apellido.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !apellidoM.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         !nombre.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
         !telefono.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
@@ -35,6 +37,7 @@ struct NuevoProfesorView: View {
             Form {
                 Section(header: Text("Datos Personales")) {
                     TextField("Apellido", text: $apellido)
+                    TextField("Apellido Materno", text: $apellidoM)
                     TextField("Nombre", text: $nombre)
                     TextField("Email", text: $email)
                         .keyboardType(.emailAddress)
@@ -87,6 +90,7 @@ struct NuevoProfesorView: View {
         withAnimation {
             let nuevoProfesor = Profesor(
                 apellido: apellido,
+                apellidoM: apellidoM,
                 nombre: nombre,
                 email: email,
                 telefono: telefono,
